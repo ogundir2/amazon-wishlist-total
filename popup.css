@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+        font-family: Monaco, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 20rem;
+    height: 16rem;
+    background: #FFE2D1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #272727;
+}
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+#wishlist-total-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 1.4rem;
+    font-size: 1.6rem;
+    background: #272727;
+    border-radius: 0.5rem;
+    color: #fbf2ed;
+    border: none;
+    cursor: pointer;
+        font-family: Georgia, sans-serif;
+}
+
+
