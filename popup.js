@@ -12,8 +12,6 @@ function stripCurrency(price, currency) {
     return "0.0";
   }
 
-  console.log(price, price.slice(l))
-
   return price.slice(l);
 }
 
@@ -24,7 +22,9 @@ function calculateTotal() {
         target: { tabId: tabs[0].id },
         function: function () {
           var prices = Array.from(
-            document.getElementsByClassName("a-price"),
+            document
+              .getElementById("wl-item-view")
+              .getElementsByClassName("a-price"),
             (element) => element.querySelector(".a-offscreen").innerText
           );
 
@@ -37,15 +37,18 @@ function calculateTotal() {
 
         var priceSections = resp[1];
         if (priceSections.length <= 0) {
-          console.log("No items in wishlist");
+          totalDisplay.innerText = `0.00`;
           return;
         }
 
         var currency = resp[0];
-        console.log(currency, priceSections)
         var total =
           Math.round(
-            priceSections.reduce((accumulator, current) => accumulator + parseFloat(stripCurrency(current, currency)), 0.0, ) * 100
+            priceSections.reduce(
+              (accumulator, current) =>
+                accumulator + parseFloat(stripCurrency(current, currency)),
+              0.0
+            ) * 100
           ) / 100;
 
         totalDisplay.innerText = `${currency}${total}`;

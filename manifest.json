@@ -5,7 +5,7 @@
     "version": "1.0",
     "action": {
         "default_popup": "popup.html",
-        "default_icon": "img/sigma.png"
+        "default_icon": "extension-icon.png"
     },
     "permissions": [
         "tabs",
